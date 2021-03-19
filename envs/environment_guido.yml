@@ -1,0 +1,8 @@
+name: guido_env
+dependencies:
+  - python=3.7
+  - ipykernel
+  - matplotlib
+  - pip
+  - pip:
+    - -r file:requirements_guido.txt

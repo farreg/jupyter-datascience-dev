@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  jupyter-data:
+    build: .
+    
+    ports:
+      - "8888:8888"
+    volumes:
+      - ~/.aws:/root/.aws
+  #    - /home/tiendanube/work:/Users/guidofarre/Work/repos/jupyter-datascience-dev/notebooks
+    environment:
+      # - NB_USER=tiendanube
+      - CHOWN_HOME=yes
+      - GRANT_SUDO=yes
+      - JUPYTER_ENABLE_LAB=yes
+
+    command: "start.sh jupyter notebook --NotebookApp.token='Nube2021'"
